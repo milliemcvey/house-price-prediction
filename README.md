@@ -46,6 +46,9 @@ house-price-prediction/
 ├── .github/
 │   └── workflows/
 │       └── tests.yml
+├── app/
+│   ├── README.md
+│   └── streamlit_app.py
 ├── data/
 │   └── README.md
 ├── models/
@@ -143,6 +146,24 @@ Run the tests:
 ```bash
 pytest
 ```
+
+## Visual app
+
+The project includes a small Streamlit front end for exploring predictions with sliders and charts.
+
+Run it from the project root:
+
+```bash
+streamlit run app/streamlit_app.py
+```
+
+The app:
+
+- trains the same simple linear regression baseline,
+- lets you change feature values with sidebar controls,
+- shows a predicted house value,
+- displays model metrics,
+- shows a price distribution chart and a rooms-vs-price scatter plot.
 
 ## Model and metrics
 

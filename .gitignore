@@ -5,6 +5,7 @@ __pycache__/
 *.egg-info/
 .venv/
 .jupyter/
+.streamlit/
 data/cleaned_house_data.csv
 models/*.pkl
 reports/figures/*.png

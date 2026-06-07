@@ -59,3 +59,10 @@ def make_coefficients_table(feature_names, coefficients):
             "Coefficient": coefficients,
         }
     ).sort_values(by="Coefficient", ascending=False)
+
+
+def predict_house_value(model, feature_names, input_values):
+    """Predict one house value from a dictionary of feature values."""
+    input_data = pd.DataFrame([input_values])
+    input_data = input_data.reindex(columns=feature_names, fill_value=0)
+    return model.predict(input_data)[0]

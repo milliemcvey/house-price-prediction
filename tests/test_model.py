@@ -1,6 +1,10 @@
 import pandas as pd
 
-from house_price_prediction.model import split_features_and_target, train_test_model
+from house_price_prediction.model import (
+    predict_house_value,
+    split_features_and_target,
+    train_test_model,
+)
 
 
 def test_split_features_and_target_separates_price_column():
@@ -36,3 +40,31 @@ def test_train_test_model_returns_metrics():
     assert model is not None
     assert set(metrics) == {"mae", "rmse", "r2"}
     assert len(feature_names) == len(model.coef_)
+
+
+def test_predict_house_value_returns_number():
+    house_data = pd.DataFrame(
+        {
+            "total_rooms": [800, 1000, 1200, 1400, 1600, 1800],
+            "total_bedrooms": [150, 200, 220, 260, 300, 340],
+            "housing_median_age": [35, 30, 25, 20, 15, 10],
+            "households": [250, 300, 340, 380, 420, 460],
+            "median_income": [3.0, 3.5, 4.0, 4.5, 5.0, 5.5],
+            "ocean_proximity_NEAR OCEAN": [False, False, False, True, True, True],
+            "median_house_value": [100000, 120000, 150000, 180000, 210000, 240000],
+        }
+    )
+
+    model, metrics, feature_names = train_test_model(house_data, test_size=0.33)
+    input_values = {
+        "total_rooms": 1200,
+        "total_bedrooms": 220,
+        "housing_median_age": 25,
+        "households": 340,
+        "median_income": 4.0,
+        "ocean_proximity_NEAR OCEAN": False,
+    }
+
+    prediction = predict_house_value(model, feature_names, input_values)
+
+    assert isinstance(prediction, float)

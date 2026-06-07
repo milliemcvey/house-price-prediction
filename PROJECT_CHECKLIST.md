@@ -9,5 +9,7 @@ Use this checklist before sharing the project in a portfolio.
 - [ ] Run `notebooks/03_model_training.ipynb`.
 - [ ] Add your own interpretation of the metrics.
 - [ ] Add your own notes to `What I learned`.
+- [ ] Run `streamlit run app/streamlit_app.py`.
+- [ ] Check that the visual app opens and updates when you move the sliders.
 - [ ] Run `pytest`.
 - [ ] Check that generated files are not accidentally committed.
