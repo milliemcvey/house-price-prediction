@@ -1,0 +1,6 @@
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+.jupyter/
+data/cleaned_house_data.csv
