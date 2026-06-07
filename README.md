@@ -156,16 +156,6 @@ The model is evaluated with:
 
 These metrics should be interpreted after running the notebook. A simple linear model is useful as a first baseline, but it may not capture all patterns in real housing prices.
 
-## What makes this portfolio ready
-
-- Clear README and setup instructions.
-- Notebook workflow for learning and explanation.
-- Reusable `src/` code for data cleaning and modelling.
-- Scripts for repeatable command-line runs.
-- Basic tests for important cleaning and modelling functions.
-- GitHub Actions workflow to run tests automatically.
-- Generated data and model files excluded from git.
-
 ## Future improvements
 
 - Add more useful features, such as rooms per household or bedrooms per room.
