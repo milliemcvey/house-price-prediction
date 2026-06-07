@@ -1,6 +1,10 @@
 .ipynb_checkpoints/
+.pytest_cache/
 __pycache__/
 *.pyc
+*.egg-info/
 .venv/
 .jupyter/
 data/cleaned_house_data.csv
+models/*.pkl
+reports/figures/*.png
